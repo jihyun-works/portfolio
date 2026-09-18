@@ -1,17 +1,30 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css");
 :root {
-  --bg: #f7f8fb;
+  --bg: #f7f6f2;
   --bg-soft: #ffffff;
-  --surface: rgba(255, 255, 255, 0.82);
+
+  --surface: rgba(255, 255, 255, 0.84);
   --surface-strong: rgba(255, 255, 255, 0.96);
-  --text: #111827;
-  --text-muted: #667085;
-  --line: rgba(17, 24, 39, 0.09);
-  --accent: #32c7a1;
-  --accent-2: #7b8cff;
-  --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+
+  --text: #24272d;
+  --text-muted: #69737a;
+
+  --line: rgba(36, 39, 45, 0.10);
+
+  /* personal portfolio colors */
+  --accent: #59a99f;      /* jade / glass green */
+  --accent-2: #6ea7e8;    /* clear summer blue */
+  --accent-soft: #dff1ee;
+
+  --night: #18324a;       /* winter night */
+  --coral: #e9868f;       /* tiny highlight only */
+
+  --shadow: 0 18px 50px rgba(24, 50, 74, 0.08);
+
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
+
   --container: min(1600px, calc(100% - 64px));
   --transition: 320ms cubic-bezier(.2, .8, .2, 1);
   --nav-h: 84px;
@@ -27,15 +40,36 @@ html {
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  font-family:
+    "Pretendard Variable",
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   background:
-    radial-gradient(circle at top right, rgba(50, 199, 161, 0.09), transparent 24%),
-    radial-gradient(circle at 12% 10%, rgba(123, 140, 255, 0.08), transparent 18%),
-    linear-gradient(180deg, #ffffff 0%, #f7f8fb 44%, #ffffff 100%);
+    radial-gradient(circle at top right,
+      rgba(110, 167, 232, 0.10),
+      transparent 24%),
+    radial-gradient(circle at 12% 10%,
+      rgba(89, 169, 159, 0.08),
+      transparent 18%),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7f6f2 44%,
+      #ffffff 100%
+    );
+
   color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
+}
+.brand,
+.nav-links,
+.eyebrow,
+.project-type-label,
+.footer-eyebrow {
+  font-family: "Space Grotesk", sans-serif;
 }
 
 img,
@@ -333,21 +367,22 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), #86ecd0);
-  color: #0d2a22;
+  background: #24272d;
+  color: #ffffff;
   font-weight: 700;
-  box-shadow: 0 14px 30px rgba(50, 199, 161, 0.18);
+  box-shadow: 0 12px 26px rgba(36, 39, 45, 0.14);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 20px 34px rgba(50, 199, 161, 0.24);
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 16px 30px rgba(89, 169, 159, 0.20);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.74);
   color: var(--text);
-  border: 1px solid rgba(17, 24, 39, 0.08);
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(36, 39, 45, 0.10);
 }
 
 .hero-visual {
@@ -1494,11 +1529,15 @@ button {
   position: relative;
   overflow: hidden;
   padding: 84px 0 34px;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.70);
   background:
-    radial-gradient(circle at 82% 10%, rgba(123, 140, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 12% 90%, rgba(50, 199, 161, 0.12), transparent 28%),
-    #111827;
+    radial-gradient(circle at 82% 10%,
+      rgba(110, 167, 232, 0.17),
+      transparent 30%),
+    radial-gradient(circle at 12% 90%,
+      rgba(89, 169, 159, 0.12),
+      transparent 28%),
+    #18324a;
 }
 
 .footer-inner {
@@ -2581,3 +2620,4 @@ template {
     transition: none;
   }
 }
+
