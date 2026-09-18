@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
 :root {
   --bg: #f7f6f2;
   --bg-soft: #ffffff;
@@ -12,12 +13,16 @@
   --line: rgba(36, 39, 45, 0.10);
 
   /* personal portfolio colors */
-  --accent: #59a99f;      /* jade / glass green */
-  --accent-2: #6ea7e8;    /* clear summer blue */
+  --accent: #59a99f;
+  /* jade / glass green */
+  --accent-2: #6ea7e8;
+  /* clear summer blue */
   --accent-soft: #dff1ee;
 
-  --night: #18324a;       /* winter night */
-  --coral: #e9868f;       /* tiny highlight only */
+  --night: #18324a;
+  /* winter night */
+  --coral: #e9868f;
+  /* tiny highlight only */
 
   --shadow: 0 18px 50px rgba(24, 50, 74, 0.08);
 
@@ -55,15 +60,14 @@ body {
     radial-gradient(circle at 12% 10%,
       rgba(89, 169, 159, 0.08),
       transparent 18%),
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #ffffff 0%,
       #f7f6f2 44%,
-      #ffffff 100%
-    );
+      #ffffff 100%);
 
   color: var(--text);
 }
+
 .brand,
 .nav-links,
 .eyebrow,
@@ -765,9 +769,6 @@ button {
   transform: translateX(-50%);
   background: #ffffff;
 }
-.brand-row:nth-child(1)::before{
-  background-color: #1f4e79;
-}
 
 .brand-info {
   display: grid;
@@ -800,64 +801,502 @@ button {
 
 /* 브랜드별 색상 start */
 /* 이 부분을 지우면 포트폴리오 메인 컬러를 사용하실 수 있습니다. */
+/* ==================================================
+   SEAMOOD
+   Deep Ocean Blue / Seafoam / Aqua / Sand
+================================================== */
+
+/* SEAMOOD 전체 배경 */
+.brand-row:nth-child(1) {
+  background: transparent;
+  color: #fafcfc;
+}
+
+.brand-row:nth-child(1)::before {
+  background:
+    radial-gradient(circle at 82% 12%,
+      rgba(174, 231, 232, 0.14),
+      transparent 28%),
+    radial-gradient(circle at 12% 90%,
+      rgba(198, 227, 225, 0.09),
+      transparent 26%),
+    linear-gradient(135deg,
+      #183f63 0%,
+      #1f4e79 52%,
+      #173b5d 100%);
+}
+
+
+/* 프로젝트 정보 구분선 */
+.brand-row:nth-child(1) .brand-info {
+  border-bottom: 1px solid rgba(250, 252, 252, 0.18);
+}
+
+
+/* Personal Project */
+.brand-row:nth-child(1) .project-type-label {
+  color: #aee7e8;
+}
+
+
+/* SEAMOOD logo/title */
 .brand1_color h3 {
-  font-family: "Cormorant Garamond";
-  letter-spacing: 5px;
+  font-family: "Cormorant Garamond", serif;
   color: #fafcfc;
-}
-.brand1_color p{
-  color: #fafcfc;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
 }
 
 
+/* 설명 */
+.brand1_color p {
+  color: rgba(250, 252, 252, 0.78);
+  line-height: 1.75;
+}
+
+
+/* 기본 tag */
 .brand1_color .tag a {
-  background-color: #c4b02a;
-  color: #fff;
+  color: #ddf4f3;
+
+  background: rgba(198, 227, 225, 0.10);
+
+  border:
+    1px solid rgba(198, 227, 225, 0.28);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .brand1_color .tag a:hover {
-  background-color: #a24b1c;
-  color: #fff;
+  color: #1f4e79;
+
+  background: #c6e3e1;
+  border-color: #c6e3e1;
+
+  transform: translateY(-2px);
 }
 
+
+/* 중요 tag / point */
 .brand1_color .point-color a {
-  background-color: #a24b1c;
-  color: #fff;
+  color: #1f4e79;
+
+  background: #e8dccb;
+  border-color: #e8dccb;
 }
 
 .brand1_color .point-color a:hover {
-  background-color: #c4b02a;
-  color: #fff;
+  color: #1f4e79;
+
+  background: #aee7e8;
+  border-color: #aee7e8;
+}
+
+
+/* ==================================================
+   SEAMOOD CARD
+================================================== */
+
+.brand-row:nth-child(1) .brand-thumb {
+  background: #fafcfc;
+
+  border:
+    1px solid rgba(198, 227, 225, 0.28);
+
+  box-shadow:
+    0 18px 44px rgba(8, 34, 58, 0.16);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+
+/* 카드 hover */
+.brand-row:nth-child(1) .brand-thumb:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(174, 231, 232, 0.7);
+
+  box-shadow:
+    0 24px 54px rgba(8, 34, 58, 0.23);
+}
+
+
+/* 이미지 */
+.brand-row:nth-child(1) .brand-thumb img,
+.brand-row:nth-child(1) .brand-thumb video {
+  transition:
+    transform 700ms cubic-bezier(.2, .8, .2, 1),
+    filter 700ms cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* 이미지 hover */
+.brand-row:nth-child(1) .brand-thumb:hover img,
+.brand-row:nth-child(1) .brand-thumb:hover video {
+  transform: scale(1.018);
+
+  filter:
+    saturate(1.03) contrast(1.015);
+}
+
+
+/* 카드 아래 설명 영역 */
+.brand-row:nth-child(1) .brand-thumb .thumb-overlay {
+  background:
+    linear-gradient(180deg,
+      #fafcfc 0%,
+      #f4f9f9 100%);
+
+  border-top:
+    1px solid rgba(31, 78, 121, 0.08);
+}
+
+
+/* 카드 제목 */
+.brand-row:nth-child(1) .brand-thumb .thumb-overlay strong {
+  color: #1f4e79;
+
+  font-weight: 700;
+}
+
+
+/* 카드 설명 */
+.brand-row:nth-child(1) .brand-thumb .thumb-overlay span {
+  color: #687e87;
+}
+
+
+/* 카드 버튼 */
+.brand-row:nth-child(1) .brand-thumb .thumb-overlay .brand-card-button {
+
+  color: #1f4e79;
+
+  background: transparent;
+
+  border:
+    1px solid rgba(31, 78, 121, 0.22);
+
+  border-radius: 999px;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+
+/* 카드 버튼 hover */
+.brand-row:nth-child(1) .brand-thumb:hover .thumb-overlay .brand-card-button {
+
+  color: #fafcfc;
+
+  background: #1f4e79;
+  border-color: #1f4e79;
+
+  transform: translateY(-1px);
+}
+
+.brand-row:nth-child(1) .brand-slider-title {
+  color: rgba(221, 244, 243, 0.68);
+}
+
+/* ==================================================
+   SELECT BUSAN
+   OFFICIAL COLOR PALETTE
+================================================== */
+
+.brand-row:has(.brand2_color) {
+  --sb-navy: #10164A;
+  --sb-yellow: #FFC928;
+  --sb-coral: #F45F70;
+  --sb-teal: #16A6A6;
+  --sb-blue: #006FE8;
+
+  background: transparent;
+  color: var(--sb-navy);
+}
+
+/* SELECT BUSAN 전체 섹션 */
+.brand-row:has(.brand2_color) {
+  background: transparent;
+  color: #10164a;
+}
+
+.brand-row:has(.brand2_color)::before {
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(255, 201, 40, 0.18),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 8% 82%,
+      rgba(22, 166, 166, 0.10),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f4f8fd 48%,
+      #eef6ff 100%
+    );
+}
+
+
+/* 프로젝트 정보 구분선 */
+.brand-row:has(.brand2_color) .brand-info {
+  border-bottom: 1px solid rgba(16, 22, 74, 0.12);
+}
+
+
+/* Team Project */
+.brand-row:has(.brand2_color) .project-type-label {
+  color: var(--sb-blue);
+}
+.brand-row:has(.brand2_color) .project-type-label.is-team {
+  color: var(--sb-blue);
+}
+
+.brand-row:has(.brand2_color) .team-result-number {
+  color: var(--sb-coral);
 }
 
 .brand2_color h3 {
-  font-family: "Fredoka";
-  color: #006fe8;
-  letter-spacing: 2px;
+  font-family: "Fredoka", sans-serif;
+  color: var(--sb-blue);
+
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
+.brand2_color p {
+  color: rgba(16, 22, 74, 0.82);
+  line-height: 1.75;
+}
+
+
+/* 기본 tag */
 .brand2_color .tag a {
-  background-color: orangered;
-  color: #fff;
+  color: var(--sb-blue);
+  background: rgba(0, 111, 232, 0.06);
+  border: 1px solid rgba(0, 111, 232, 0.18);
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .brand2_color .tag a:hover {
-  background-color: orange;
-  color: #fff;
+  color: #ffffff;
+  background: var(--sb-blue);
+  border-color: var(--sb-blue);
+
+  transform: translateY(-2px);
 }
 
 .brand2_color .point-color a {
-  background-color: orange;
-  color: #fff;
+  color: var(--sb-navy);
+  background: var(--sb-yellow);
+  border-color: var(--sb-yellow);
 }
 
 .brand2_color .point-color a:hover {
-  background-color: orangered;
-  color: #fff;
+  color: #ffffff;
+  background: var(--sb-coral);
+  border-color: var(--sb-coral);
+}
+
+/* ==================================================
+   SELECT BUSAN CARD
+================================================== */
+.select-busan-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.select-busan-title .sb-select {
+  color: #006FE8;
+  margin-right: 0.22em;
+}
+
+.select-busan-title .sb-b {
+  color: #10164A;
+}
+
+.select-busan-title .sb-u {
+  color: #F45F70;
+}
+
+.select-busan-title .sb-s {
+  color: #FFC928;
+}
+
+.select-busan-title .sb-a {
+  color: #16A6A6;
+}
+
+.select-busan-title .sb-n {
+  color: #10164A;
+}
+.brand-row:has(.brand2_color) .brand-track .brand-thumb {
+  background: #ffffff;
+
+  border:
+    1px solid rgba(0, 111, 232, 0.10);
+
+  box-shadow:
+    0 16px 40px rgba(16, 22, 74, 0.08);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+
+.brand-row:has(.brand2_color) .brand-track .brand-thumb:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(22, 166, 166, 0.38);
+
+  box-shadow:
+    0 22px 48px rgba(0, 111, 232, 0.13);
+}
+
+
+/* 카드 설명 영역 */
+.brand-row:has(.brand2_color)
+.brand-track
+.brand-thumb
+.thumb-overlay  {
+
+  background:
+    linear-gradient(180deg,
+      #ffffff 0%,
+      #f7faff 100%);
+
+  border-top:
+    1px solid rgba(0, 111, 232, 0.08);
+}
+
+
+/* 카드 제목 */
+.brand-row:has(.brand2_color)
+.brand-track
+.brand-thumb
+.thumb-overlay strong {
+
+  color: #10164a;
+
+  font-weight: 700;
+}
+
+
+/* 카드 설명 */
+.brand-row:has(.brand2_color)
+.brand-track
+.brand-thumb
+.thumb-overlay span {
+
+  color: #667085;
+}
+
+
+/* 카드 버튼 */
+.brand-row:has(.brand2_color)
+.brand-track
+.brand-thumb
+.thumb-overlay
+.brand-card-button {
+
+  color: #006fe8;
+
+  background: transparent;
+
+  border:
+    1px solid rgba(0, 111, 232, 0.22);
+
+  border-radius: 999px;
+}
+
+
+/* 카드 hover 버튼 */
+.brand-row:has(.brand2_color)
+.brand-track
+.brand-thumb:hover
+.thumb-overlay
+.brand-card-button {
+  color: #ffffff;
+  background: #006fe8;
+  border-color: #006fe8;
+}
+
+/* ==================================================
+   SELECT BUSAN TEAM CONTENT
+================================================== */
+
+.brand-row:has(.brand2_color) .team-result-section {
+  border-top-color: rgba(16, 22, 74, 0.10);
+}
+
+
+/* 01 / 02 / 03 */
+.brand-row:has(.brand2_color) .team-result-number {
+  color: #f45f70;
+}
+
+
+/* 결과물 제목 */
+.brand-row:has(.brand2_color) .team-result-head h4 {
+  color: #10164a;
+}
+
+
+/* 결과물 설명 */
+.brand-row:has(.brand2_color) .team-result-head p {
+  color: rgba(16, 22, 74, 0.60);
+}
+
+
+/* 플레이 버튼 */
+.brand-row:has(.brand2_color) .landscape-play {
+  background: rgba(16, 22, 74, 0.58);
+  border-color: rgba(255, 255, 255, 0.58);
+}
+
+.brand-row:has(.brand2_color) .brand-film-card:hover .landscape-play {
+
+  background: #006fe8;
+}
+
+
+/* 카드 hover 이미지 */
+.brand-row:has(.brand2_color) .brand-track .brand-thumb:hover img,
+.brand-row:has(.brand2_color) .brand-track .brand-thumb:hover video {
+  filter:
+    saturate(1.04)
+    contrast(1.02);
 }
 
 /* 브랜드별 색상 end */
-
 .brand-info p {
   margin: 0;
   max-width: 620px;
@@ -1100,14 +1539,13 @@ button {
   cursor: pointer;
 }
 
-.team-promotion-grid .brand-thumb>img {
+.team-promotion-grid .brand-thumb > img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   aspect-ratio: auto;
   object-fit: cover;
-  transition: transform 700ms cubic-bezier(.2, .8, .2, 1);
 }
 
 .team-promotion-grid .brand-thumb::after {
@@ -1208,7 +1646,7 @@ button {
 
 .team-reels-grid {
   display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   align-items: stretch;
   width: 100%;
@@ -2620,4 +3058,3 @@ template {
     transition: none;
   }
 }
-
