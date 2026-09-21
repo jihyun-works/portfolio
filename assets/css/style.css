@@ -144,19 +144,11 @@ button {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
-  padding: 18px 0;
   transition:
     background var(--transition),
     border-color var(--transition),
     backdrop-filter var(--transition),
     box-shadow var(--transition);
-}
-
-.site-header.scrolled {
-  background: rgba(255, 255, 255, 0.78);
-  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
 .nav {
@@ -1829,10 +1821,6 @@ button {
   gap: 26px;
 }
 
-#works {
-  background: #ffffff;
-}
-
 .team-reels-grid .brand-reel-card,
 .team-reels-grid .brand-reel-card .thumb-video {
   border-radius: 0 !important;
@@ -1854,14 +1842,6 @@ button {
   position: relative;
   overflow: hidden;
   padding: 84px 0 34px;
-  background:
-    radial-gradient(circle at 82% 10%,
-      rgba(110, 167, 232, 0.17),
-      transparent 30%),
-    radial-gradient(circle at 12% 90%,
-      rgba(89, 169, 159, 0.12),
-      transparent 28%),
-    #18324a;
 }
 
 .footer-inner {
@@ -1871,13 +1851,12 @@ button {
 
 .footer-cta {
   padding-bottom: 68px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid;
 }
 
 .footer-eyebrow {
   display: block;
   margin-bottom: 24px;
-  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1891,12 +1870,8 @@ button {
 }
 
 .footer-cta h2 {
-  max-width: 800px;
   margin: 0 0 14px;
-  color: #ffffff;
   font-size: clamp(2rem, 4vw, 4.25rem);
-  line-height: 1.16;
-  letter-spacing: -0.055em;
 }
 
 .footer-cta p {
@@ -1908,15 +1883,7 @@ button {
   flex: 0 0 auto;
   padding: 0 0 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.42);
-  color: #ffffff;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
-  transition: color var(--transition), border-color var(--transition);
-}
-
-.footer-mail:hover,
-.footer-mail:focus-visible {
-  color: var(--accent);
-  border-color: var(--accent);
 }
 
 .footer-grid {
@@ -1964,8 +1931,6 @@ button {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 12px rgba(50, 199, 161, 0.8);
 }
 
 .footer-bottom {
@@ -1974,18 +1939,16 @@ button {
   align-items: center;
   gap: 24px;
   padding-top: 26px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid;
   font-size: 0.86rem;
 }
 
 .footer-bottom a {
-  color: #ffffff;
   transition: color var(--transition), transform var(--transition);
 }
 
 .footer-bottom a:hover,
 .footer-bottom a:focus-visible {
-  color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -2020,7 +1983,7 @@ button {
 }
 
 .thumb-card.reveal.is-visible:hover {
-  transform: translateY(-4px) scale(1);
+  transform: translateY(-4px);
 }
 
 .modal {
@@ -2680,10 +2643,6 @@ template {
     padding-bottom: 48px;
   }
 
-  .footer-cta h2 {
-    font-size: clamp(2.1rem, 10vw, 3.25rem);
-  }
-
   .footer-mail {
     width: 100%;
     display: flex;
@@ -2784,7 +2743,6 @@ template {
   }
 
   .team-reels-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
@@ -2866,14 +2824,12 @@ template {
 @media (max-width: 1080px) {
   #visualTrack>.thumb-card {
     width: calc(44.444444% - 7.111111px);
-    aspect-ratio: 16 / 10;
   }
 }
 
 @media (max-width: 760px) {
   #visualTrack>.thumb-card {
     width: 86%;
-    aspect-ratio: 16 / 10;
   }
 
   #videoTrack {
@@ -2957,9 +2913,6 @@ template {
 
 /* 02. 작품 카드 */
 #works #visualTrack>.thumb-card {
-  position: relative;
-  overflow: hidden;
-
   border: 1px solid rgba(89, 169, 159, 0.16);
   border-radius: 18px;
 
@@ -2979,10 +2932,6 @@ template {
 /* 작품 이미지와 영상 */
 #works #visualTrack>.thumb-card .thumb-video,
 #works #visualTrack>.thumb-card .thumb-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
   transition:
     transform 650ms cubic-bezier(.2, .8, .2, 1),
     filter 650ms ease;
@@ -3006,7 +2955,6 @@ template {
 
 #works #visualTrack .thumb-overlay strong {
   color: #ffffff;
-  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -3017,16 +2965,11 @@ template {
 
 
 /* 03. 작품 카드 인터랙션 */
-
 /* 카드에 마우스를 올렸을 때 */
-#works #visualTrack>.thumb-card:hover,
-#works #visualTrack>.thumb-card.reveal.is-visible:hover {
+#works #visualTrack > .thumb-card:hover {
   transform: translateY(-5px);
-
   border-color: rgba(89, 169, 159, 0.42);
-
-  box-shadow:
-    0 18px 36px rgba(24, 50, 74, 0.13);
+  box-shadow: 0 18px 36px rgba(24, 50, 74, 0.13);
 }
 
 /* 이미지와 영상만 살짝 확대 */
@@ -3071,8 +3014,6 @@ template {
   background: #59a99f;
   border-color: #59a99f;
   color: #ffffff;
-
-  transform: translateY(-2px);
 }
 
 
@@ -3240,8 +3181,6 @@ template {
 
 /* 05. 스킬 카드 */
 #about .skill-group {
-  padding: 18px;
-
   border: 1px solid rgba(89, 169, 159, 0.13);
   border-radius: 12px;
 
@@ -3325,7 +3264,6 @@ template {
   color: #18324a;
 
   font-size: 1.02rem;
-  font-weight: 700;
   letter-spacing: -0.035em;
 
   transition: color 300ms ease;
@@ -3341,11 +3279,6 @@ template {
   height: 9px;
 
   flex-shrink: 0;
-
-  background: linear-gradient(135deg,
-      #59a99f,
-      #6ea7e8);
-
   box-shadow:
     0 0 0 4px rgba(89, 169, 159, 0.09);
 }
@@ -3362,8 +3295,6 @@ template {
 
 /* 메뉴 글자 */
 .site-header .nav-links a {
-  position: relative;
-
   padding: 7px 0;
 
   transition:
@@ -3373,14 +3304,10 @@ template {
 
 /* 메뉴 아래 포인트 선 */
 .site-header .nav-links a::after {
-  bottom: 0;
-
   height: 2px;
   border-radius: 999px;
 
   background: #59a99f;
-
-  transform: scaleX(0);
   transform-origin: left center;
 
   transition: transform 280ms ease;
@@ -3390,7 +3317,6 @@ template {
 .site-header .nav-links a:hover,
 .site-header .nav-links a:focus-visible {
   color: #347e78;
-  transform: translateY(-1px);
 }
 
 .site-header .nav-links a:hover::after,
@@ -3535,8 +3461,6 @@ template {
 
 /* 이메일 링크 */
 .site-footer .footer-mail {
-  border-bottom: 1px solid;
-
   transition:
     color 280ms ease,
     border-color 280ms ease,
@@ -3705,7 +3629,8 @@ template {
     0 0 12px rgba(130, 184, 216, 0.7);
 }
 
-/* SELECT BUSAN 릴스 - 프로그램 아이콘 흰색 */
-.team-reel-caption .thumb-tools img {
+/* SELECT BUSAN 릴스, 카드뉴스 - 프로그램 아이콘 흰색 */
+.team-reel-caption .thumb-tools img,
+.brand-row:has(.brand2_color) .team-promotion-grid .thumb-tools img {
   filter: brightness(0) invert(1);
 }
