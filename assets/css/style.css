@@ -40,11 +40,13 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 24px);
 }
 
 body {
+  margin: 0;
   font-family:
     "Pretendard Variable",
     "Pretendard",
@@ -113,7 +115,6 @@ button {
   font-size: 0.875rem;
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.72);
-  /* background: #86ecd0; */
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
@@ -252,23 +253,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* opacity: 0.08; */
-  /* filter: saturate(1.02) contrast(1.02);
-      transform: scale(1.05);
-      animation: heroVideoFloat 16s ease-in-out infinite alternate;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(50, 199, 161, 0.10), transparent 26%),
-        radial-gradient(circle at 78% 24%, rgba(123, 140, 255, 0.12), transparent 24%),
-        linear-gradient(135deg, #ffffff 0%, #f4f7fb 52%, #eef3fb 100%); */
 }
-
-/* .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(247, 248, 251, 0.92)),
-        linear-gradient(112deg, rgba(255, 255, 255, 0.88) 12%, rgba(255, 255, 255, 0.30) 50%, rgba(247, 248, 251, 0.86) 100%);
-    } */
 
 .hero-gridline {
   position: absolute;
@@ -389,6 +374,22 @@ button {
   border: 1px solid rgba(36, 39, 45, 0.10);
 }
 
+/* Hero - About Me Hover */
+.hero-actions .btn-secondary {
+  transition:
+    transform 280ms ease,
+    background 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.hero-actions .btn-secondary:hover {
+  background: #ffffff;
+  border-color: rgba(89, 169, 159, 0.35);
+  box-shadow: 0 10px 24px rgba(24, 50, 74, 0.12);
+  transform: translateY(-3px);
+}
+
 .hero-visual {
   position: relative;
   min-height: 720px;
@@ -496,15 +497,6 @@ button {
     radial-gradient(circle at 78% 24%, rgba(123, 140, 255, 0.18), transparent 24%),
     linear-gradient(135deg, #ffffff 0%, #f3f6fb 52%, #eef2f8 100%);
 }
-
-/* .hero-panel::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 52%;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.94), transparent);
-  pointer-events: none;
-} */
 
 .hero-panel-label {
   position: absolute;
@@ -1029,30 +1021,18 @@ button {
   color: var(--sb-navy);
 }
 
-/* SELECT BUSAN 전체 섹션 */
-.brand-row:has(.brand2_color) {
-  background: transparent;
-  color: #10164a;
-}
-
 .brand-row:has(.brand2_color)::before {
   background:
-    radial-gradient(
-      circle at 88% 10%,
+    radial-gradient(circle at 88% 10%,
       rgba(255, 201, 40, 0.18),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 8% 82%,
+      transparent 24%),
+    radial-gradient(circle at 8% 82%,
       rgba(22, 166, 166, 0.10),
-      transparent 26%
-    ),
-    linear-gradient(
-      135deg,
+      transparent 26%),
+    linear-gradient(135deg,
       #ffffff 0%,
       #f4f8fd 48%,
-      #eef6ff 100%
-    );
+      #eef6ff 100%);
 }
 
 
@@ -1064,9 +1044,6 @@ button {
 
 /* Team Project */
 .brand-row:has(.brand2_color) .project-type-label {
-  color: var(--sb-blue);
-}
-.brand-row:has(.brand2_color) .project-type-label.is-team {
   color: var(--sb-blue);
 }
 
@@ -1156,6 +1133,7 @@ button {
 .select-busan-title .sb-n {
   color: #10164A;
 }
+
 .brand-row:has(.brand2_color) .brand-track .brand-thumb {
   background: #ffffff;
 
@@ -1183,10 +1161,7 @@ button {
 
 
 /* 카드 설명 영역 */
-.brand-row:has(.brand2_color)
-.brand-track
-.brand-thumb
-.thumb-overlay  {
+.brand-row:has(.brand2_color) .brand-track .brand-thumb .thumb-overlay {
 
   background:
     linear-gradient(180deg,
@@ -1199,10 +1174,7 @@ button {
 
 
 /* 카드 제목 */
-.brand-row:has(.brand2_color)
-.brand-track
-.brand-thumb
-.thumb-overlay strong {
+.brand-row:has(.brand2_color) .brand-track .brand-thumb .thumb-overlay strong {
 
   color: #10164a;
 
@@ -1211,21 +1183,14 @@ button {
 
 
 /* 카드 설명 */
-.brand-row:has(.brand2_color)
-.brand-track
-.brand-thumb
-.thumb-overlay span {
+.brand-row:has(.brand2_color) .brand-track .brand-thumb .thumb-overlay span {
 
   color: #667085;
 }
 
 
 /* 카드 버튼 */
-.brand-row:has(.brand2_color)
-.brand-track
-.brand-thumb
-.thumb-overlay
-.brand-card-button {
+.brand-row:has(.brand2_color) .brand-track .brand-thumb .thumb-overlay .brand-card-button {
 
   color: #006fe8;
 
@@ -1239,11 +1204,7 @@ button {
 
 
 /* 카드 hover 버튼 */
-.brand-row:has(.brand2_color)
-.brand-track
-.brand-thumb:hover
-.thumb-overlay
-.brand-card-button {
+.brand-row:has(.brand2_color) .brand-track .brand-thumb:hover .thumb-overlay .brand-card-button {
   color: #ffffff;
   background: #006fe8;
   border-color: #006fe8;
@@ -1256,13 +1217,6 @@ button {
 .brand-row:has(.brand2_color) .team-result-section {
   border-top-color: rgba(16, 22, 74, 0.10);
 }
-
-
-/* 01 / 02 / 03 */
-.brand-row:has(.brand2_color) .team-result-number {
-  color: #f45f70;
-}
-
 
 /* 결과물 제목 */
 .brand-row:has(.brand2_color) .team-result-head h4 {
@@ -1292,8 +1246,7 @@ button {
 .brand-row:has(.brand2_color) .brand-track .brand-thumb:hover img,
 .brand-row:has(.brand2_color) .brand-track .brand-thumb:hover video {
   filter:
-    saturate(1.04)
-    contrast(1.02);
+    saturate(1.04) contrast(1.02);
 }
 
 /* 브랜드별 색상 end */
@@ -1338,7 +1291,6 @@ button {
   padding-top: 10px;
   padding-bottom: 6px;
   -webkit-overflow-scrolling: touch;
-  /* cursor: grab; */
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-y;
@@ -1365,10 +1317,6 @@ button {
 .thumb-track>* {
   flex: 0 0 auto;
   scroll-snap-align: start;
-}
-
-.brand-track>.brand-thumb {
-  width: auto;
 }
 
 /* Brand projects: all work is visible at once instead of inside a horizontal slider. */
@@ -1539,7 +1487,7 @@ button {
   cursor: pointer;
 }
 
-.team-promotion-grid .brand-thumb > img {
+.team-promotion-grid .brand-thumb>img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1640,10 +1588,6 @@ button {
   transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* .team-reels-section {
-  padding-top: 0;
-} */
-
 .team-reels-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1730,8 +1674,6 @@ button {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  /* background: linear-gradient(135deg, rgba(50,199,161,0.10), rgba(123,140,255,0.11)); */
-  /* border: 1px solid rgba(17,24,39,0.06); */
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
   user-select: none;
@@ -1770,7 +1712,7 @@ button {
 }
 
 .thumb-card:hover {
-  transform: translateY(-4px) scale(1.0);
+  transform: translateY(-4px);
   border-color: rgba(50, 199, 161, 0.24);
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.10);
 }
@@ -1781,14 +1723,6 @@ button {
   -webkit-user-drag: none;
 }
 
-/*.thumb-video,
- .thumb-image, 
-.thumb-overlay, 
- .thumb-card video, 
-.thumb-card img {
-  pointer-events: none;
-} */
-
 .thumb-video,
 .thumb-image {
   position: absolute;
@@ -1797,10 +1731,6 @@ button {
   height: 100%;
   object-fit: cover;
   transition: transform 700ms cubic-bezier(.2, .8, .2, 1), filter 700ms cubic-bezier(.2, .8, .2, 1);
-  /* background:
-        radial-gradient(circle at 20% 20%, rgba(50, 199, 161, 0.18), transparent 26%),
-        radial-gradient(circle at 78% 24%, rgba(123, 140, 255, 0.18), transparent 24%),
-        linear-gradient(135deg, #ffffff 0%, #f3f6fb 52%, #eef2f8 100%); */
 }
 
 .thumb-card:hover .thumb-video,
@@ -1815,38 +1745,18 @@ button {
   inset: auto 0 0 0;
   height: 56%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
-  /* background: linear-gradient(to top, rgba(255, 255, 255, 0.92), transparent); */
   pointer-events: none;
 }
 
-/* .thumb-card::before {
-      content: "Preview";
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 1;
-      padding: 7px 10px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(17, 24, 39, 0.06);
-      backdrop-filter: blur(8px);
-      pointer-events: none;
-    } */
-
-/* .brand-track .thumb-card::before {
-      content: "Slide";
-    } */
-
 .thumb-overlay {
   position: absolute;
-  inset: auto 0 0 0;
-  padding: 18px;
+  inset: auto 0 0;
+  z-index: 2;
+
   display: grid;
   gap: 4px;
-  z-index: 1;
+  padding: 18px;
+
   transform: translateY(4px);
   transition: transform var(--transition);
 }
@@ -1863,7 +1773,6 @@ button {
 }
 
 .thumb-overlay span {
-  /* color: var(--text-muted); */
   color: #ffffffbf;
   font-size: 0.88rem;
 }
@@ -1876,9 +1785,6 @@ button {
 
 .thumb-video {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .thumb-play-button {
@@ -1918,14 +1824,6 @@ button {
   transform: translate(-50%, -50%) scale(0.9);
 }
 
-.thumb-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-}
-
 .works-stack {
   display: grid;
   gap: 26px;
@@ -1935,20 +1833,9 @@ button {
   background: #ffffff;
 }
 
-#about .card,
-#about .profile-media,
-#about .profile-media>div,
 .team-reels-grid .brand-reel-card,
 .team-reels-grid .brand-reel-card .thumb-video {
   border-radius: 0 !important;
-}
-
-#works .work-row,
-#works .thumb-card,
-#works .thumb-image,
-#works .thumb-card img,
-#works .thumb-card video {
-  border-radius: 0;
 }
 
 .work-row {
@@ -1967,7 +1854,6 @@ button {
   position: relative;
   overflow: hidden;
   padding: 84px 0 34px;
-  color: rgba(255, 255, 255, 0.70);
   background:
     radial-gradient(circle at 82% 10%,
       rgba(110, 167, 232, 0.17),
@@ -2048,7 +1934,6 @@ button {
 }
 
 .footer-column strong {
-  color: #ffffff;
   display: block;
   margin-bottom: 8px;
   font-size: 1rem;
@@ -2065,7 +1950,6 @@ button {
 
 .footer-column a:hover,
 .footer-column a:focus-visible {
-  color: #ffffff;
   transform: translateX(3px);
 }
 
@@ -2174,9 +2058,6 @@ button {
 .modal-close {
   position: sticky;
   top: 18px;
-  /* margin-left: auto;
-      margin-right: 18px;
-      margin-top: 18px; */
   margin: 18px;
   z-index: 1;
   width: 44px;
@@ -2662,12 +2543,6 @@ template {
   display: none !important;
 }
 
-@media (max-width: 1360px) {
-  .brand-track {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
 @media (min-width: 761px) {
   #about {
     padding-bottom: 72px;
@@ -2724,17 +2599,11 @@ template {
 
   .hero-copy {
     max-width: 100%;
-    justify-self: stretch;
-    padding-left: 0;
   }
 
   .hero-stack {
     grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
     grid-template-rows: minmax(0, 1fr) minmax(0, 0.85fr);
-  }
-
-  .brand-track>.brand-thumb {
-    width: auto;
   }
 
   .brand-info {
@@ -2778,19 +2647,13 @@ template {
     --container: min(100% - 28px, 100%);
   }
 
-  .site-header {
-    padding: 14px 0;
-  }
-
   .nav {
     align-items: flex-start;
   }
 
   .nav-links {
-    gap: 12px;
     flex-wrap: wrap;
     justify-content: end;
-    font-size: 0.9rem;
   }
 
   .section {
@@ -2855,8 +2718,6 @@ template {
 
   .hero-inner {
     gap: 0px;
-    /* width: min(100% - 28px, 100%);
-    grid-template-columns: 1fr; */
     bottom: -50px;
   }
 
@@ -2872,11 +2733,6 @@ template {
 
   .hero-actions {
     justify-content: center;
-  }
-
-  .hero-copy {
-    max-width: 100%;
-    padding-left: 0;
   }
 
   .hero-copy h1 {
@@ -2916,10 +2772,6 @@ template {
   .brand-track {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-  }
-
-  .team-project-content {
-    gap: 0;
   }
 
   .team-result-section {
@@ -3057,4 +2909,803 @@ template {
     transform: none;
     transition: none;
   }
+}
+
+/* =========================================
+   VISUAL CONTENT
+   Gallery Background · Cards · Interaction
+========================================= */
+
+/* 01. 갤러리 전체 배경 */
+#works {
+  background:
+    radial-gradient(circle at 90% 12%,
+      rgba(110, 167, 232, 0.10),
+      transparent 32%),
+    linear-gradient(145deg,
+      #ffffff 0%,
+      #f7fcfb 55%,
+      #f2f8fb 100%);
+}
+
+/* 갤러리를 감싸는 큰 카드 */
+#works .work-row {
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 1px solid rgba(89, 169, 159, 0.15);
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 50px rgba(24, 50, 74, 0.06);
+
+  backdrop-filter: blur(12px);
+}
+
+/* 갤러리 제목 */
+#works .work-row-head h3 {
+  color: #18324a;
+  font-weight: 700;
+}
+
+/* 갤러리 설명 */
+#works .work-row-head p {
+  color: #697d85;
+}
+
+
+/* 02. 작품 카드 */
+#works #visualTrack>.thumb-card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(89, 169, 159, 0.16);
+  border-radius: 18px;
+
+  background: #edf5f6;
+
+  box-shadow:
+    0 8px 24px rgba(24, 50, 74, 0.06);
+
+  cursor: pointer;
+
+  transition:
+    transform 350ms cubic-bezier(.2, .8, .2, 1),
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+/* 작품 이미지와 영상 */
+#works #visualTrack>.thumb-card .thumb-video,
+#works #visualTrack>.thumb-card .thumb-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 650ms cubic-bezier(.2, .8, .2, 1),
+    filter 650ms ease;
+}
+
+/* 이미지 아래쪽 그라데이션 */
+#works #visualTrack>.thumb-card::after {
+  height: 65%;
+
+  background: linear-gradient(to top,
+      rgba(15, 35, 49, 0.72) 0%,
+      rgba(15, 35, 49, 0.20) 58%,
+      transparent 100%);
+}
+
+/* 카드 제목 및 설명 */
+#works #visualTrack .thumb-overlay {
+  padding: 20px;
+  gap: 5px;
+}
+
+#works #visualTrack .thumb-overlay strong {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#works #visualTrack .thumb-overlay>span:not(.thumb-tools) {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.85rem;
+}
+
+
+/* 03. 작품 카드 인터랙션 */
+
+/* 카드에 마우스를 올렸을 때 */
+#works #visualTrack>.thumb-card:hover,
+#works #visualTrack>.thumb-card.reveal.is-visible:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(89, 169, 159, 0.42);
+
+  box-shadow:
+    0 18px 36px rgba(24, 50, 74, 0.13);
+}
+
+/* 이미지와 영상만 살짝 확대 */
+#works #visualTrack>.thumb-card:hover .thumb-video,
+#works #visualTrack>.thumb-card:hover .thumb-image {
+  transform: scale(1.045);
+  filter: saturate(1.06) contrast(1.02);
+}
+
+/* 작품 제목의 미세한 움직임 */
+#works #visualTrack>.thumb-card .thumb-overlay {
+  transform: translateY(4px);
+
+  transition: transform 350ms ease;
+}
+
+#works #visualTrack>.thumb-card:hover .thumb-overlay {
+  transform: translateY(0);
+}
+
+/* 키보드로 카드를 선택했을 때 */
+#works #visualTrack>.thumb-card:focus-visible {
+  outline: 3px solid #59a99f;
+  outline-offset: 3px;
+}
+
+
+/* 04. 갤러리 좌우 이동 버튼 */
+#works .slider-btn {
+  border: 1px solid rgba(89, 169, 159, 0.22);
+  background: #ffffff;
+  color: #18324a;
+
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+#works .slider-btn:hover {
+  background: #59a99f;
+  border-color: #59a99f;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* 05. 모바일 여백 */
+@media (max-width: 760px) {
+  #works .work-row {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  #works #visualTrack>.thumb-card {
+    border-radius: 16px;
+  }
+
+  #works #visualTrack .thumb-overlay {
+    padding: 16px;
+  }
+}
+
+/* 움직임 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+
+  #works #visualTrack>.thumb-card,
+  #works #visualTrack .thumb-video,
+  #works #visualTrack .thumb-image,
+  #works #visualTrack .thumb-overlay {
+    transition: none;
+  }
+
+  #works #visualTrack>.thumb-card:hover,
+  #works #visualTrack>.thumb-card.reveal.is-visible:hover,
+  #works #visualTrack>.thumb-card:hover .thumb-video,
+  #works #visualTrack>.thumb-card:hover .thumb-image {
+    transform: none;
+  }
+}
+
+/* =========================================
+   ABOUT — Personal Portfolio Style
+========================================= */
+
+/* 01. About 전체 배경 */
+#about {
+  background:
+    radial-gradient(circle at 8% 12%,
+      rgba(89, 169, 159, 0.08),
+      transparent 30%),
+    radial-gradient(circle at 92% 85%,
+      rgba(110, 167, 232, 0.08),
+      transparent 32%),
+    linear-gradient(180deg,
+      #ffffff 0%,
+      #f9fcfc 100%);
+}
+
+/* About 라벨 */
+#about .eyebrow {
+  color: #347e78;
+  border-color: rgba(89, 169, 159, 0.24);
+  background: #eff8f6;
+}
+
+/* 메인 제목 */
+#about .section-head h2 {
+  color: #18324a;
+  letter-spacing: -0.045em;
+}
+
+/* 02. 왼쪽 · 오른쪽 공통 카드 */
+#about .profile-card,
+#about .about-body {
+  border: 1px solid rgba(89, 169, 159, 0.13);
+
+  border-radius: 18px !important;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 36px rgba(24, 50, 74, 0.055);
+}
+
+/* 프로필 카드 */
+#about .profile-card {
+  overflow: hidden;
+}
+
+/* 영상 영역 */
+#about .profile-media {
+  border-radius: 18px 18px 0 0 !important;
+}
+
+/* HTML의 영상 내부 프레임 */
+#about .profile-media>div {
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+/* 영상 */
+#about .profile-media video {
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* 프로필 이름 영역 */
+#about .profile-body {
+  padding: 22px 28px 26px;
+  background: #ffffff;
+}
+
+#about .profile-body strong {
+  color: #18324a;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* 03. 오른쪽 소개 카드 */
+#about .about-body {
+  padding: 34px;
+
+  background: linear-gradient(155deg,
+      #ffffff 0%,
+      #ffffff 58%,
+      #f6fbfc 100%);
+}
+
+/* 소개 소제목 */
+#about .about-body h3 {
+  color: #18324a;
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* 소개 본문 */
+#about .about-body>p {
+  color: #64737d;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* 04. 이력 */
+#about .timeline {
+  margin-bottom: 30px;
+}
+
+#about .timeline-item {
+  border-bottom:
+    1px solid rgba(24, 50, 74, 0.09);
+
+  padding: 16px 0;
+}
+
+#about .timeline-year {
+  color: #459c93;
+}
+
+#about .timeline-role strong {
+  color: #18324a;
+}
+
+#about .timeline-role span {
+  color: #697d85;
+  line-height: 1.6;
+}
+
+/* 05. 스킬 카드 */
+#about .skill-group {
+  padding: 18px;
+
+  border: 1px solid rgba(89, 169, 159, 0.13);
+  border-radius: 12px;
+
+  background: rgba(246, 251, 251, 0.86);
+
+  transition:
+    background 280ms ease,
+    border-color 280ms ease,
+    transform 280ms ease;
+}
+
+#about .skill-group h4 {
+  color: #18324a;
+  margin-bottom: 12px;
+}
+
+#about .skill-group:hover {
+  background: #eff8f6;
+  border-color: rgba(89, 169, 159, 0.32);
+  transform: translateY(-3px);
+}
+
+/* 06. 모바일 */
+@media (max-width: 760px) {
+  #about .about-body {
+    padding: 24px;
+  }
+
+  #about .profile-body {
+    padding: 20px 24px;
+  }
+
+  #about .skill-group {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #about .skill-group {
+    transition: none;
+  }
+
+  #about .skill-group:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   NAV — Personal Portfolio Style
+========================================= */
+
+/* 01. 기본 내비게이션 */
+.site-header {
+  padding: 17px 0;
+
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.30) 0%,
+      rgba(255, 255, 255, 0) 100%);
+
+  border-bottom: 1px solid transparent;
+}
+
+/* 02. 스크롤 시 내비게이션 */
+.site-header.scrolled {
+  padding: 13px 0;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border-bottom:
+    1px solid rgba(89, 169, 159, 0.13);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 8px 28px rgba(24, 50, 74, 0.045);
+}
+
+/* 03. 개인 로고 */
+.site-header .brand {
+  color: #18324a;
+
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+
+  transition: color 300ms ease;
+}
+
+.site-header .brand:hover {
+  color: #459c93;
+}
+
+/* 로고 왼쪽 작은 원 */
+.site-header .brand::before {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  background: linear-gradient(135deg,
+      #59a99f,
+      #6ea7e8);
+
+  box-shadow:
+    0 0 0 4px rgba(89, 169, 159, 0.09);
+}
+
+/* 04. 메뉴 전체 */
+.site-header .nav-links {
+  gap: 28px;
+
+  color: #596b75;
+
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* 메뉴 글자 */
+.site-header .nav-links a {
+  position: relative;
+
+  padding: 7px 0;
+
+  transition:
+    color 280ms ease,
+    transform 280ms ease;
+}
+
+/* 메뉴 아래 포인트 선 */
+.site-header .nav-links a::after {
+  bottom: 0;
+
+  height: 2px;
+  border-radius: 999px;
+
+  background: #59a99f;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 280ms ease;
+}
+
+/* Hover 및 키보드 포커스 */
+.site-header .nav-links a:hover,
+.site-header .nav-links a:focus-visible {
+  color: #347e78;
+  transform: translateY(-1px);
+}
+
+.site-header .nav-links a:hover::after,
+.site-header .nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* 스크롤 후 메뉴 색상 */
+.site-header.scrolled .nav-links {
+  color: #52636e;
+}
+
+
+/* 05. 모바일 및 태블릿 */
+@media (max-width: 760px) {
+  .site-header {
+    padding: 14px 0;
+  }
+
+  .site-header.scrolled {
+    padding: 12px 0;
+  }
+
+  .site-header .nav-links {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* 움직임 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+
+  .site-header,
+  .site-header .brand,
+  .site-header .nav-links a,
+  .site-header .nav-links a::after {
+    transition: none;
+  }
+
+  .site-header .nav-links a:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   ABOUT → BRANDING TRANSITION
+========================================= */
+
+@media (min-width: 761px) {
+
+  /* About 아래 여백 */
+  #about {
+    padding-bottom: 42px;
+  }
+
+  /* Branding 위쪽 여백 */
+  #branding {
+    padding-top: 42px;
+  }
+}
+
+
+/* =========================================
+   BRANDING / TEAM SECTION CONNECTION
+========================================= */
+
+/* 두 프로젝트가 포함된 전체 섹션 */
+#branding {
+  background: #ffffff;
+}
+
+/* 프로젝트 사이의 기본 간격 제거 */
+#branding .brand-stack {
+  gap: 0;
+}
+
+/* Branding Projects 제목 영역 */
+#branding>.container>.section-head {
+  margin-bottom: 0;
+  padding-bottom: 38px;
+}
+
+/* Team Projects 제목 영역 */
+#branding .team-section-head {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  padding-top: 58px;
+  padding-bottom: 38px;
+}
+
+/* 두 제목의 공통 타이포그래피 */
+#branding>.container>.section-head h2,
+#branding .team-section-head h2 {
+  color: #18324a;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+}
+
+/* 두 제목의 오른쪽 설명 */
+#branding>.container>.section-head p,
+#branding .team-section-head p {
+  max-width: 540px;
+
+  color: #69737a;
+  line-height: 1.65;
+}
+
+/* 프로젝트 본문은 기존 브랜드 색상 유지 */
+#branding .brand-row {
+  margin: 0;
+}
+
+/* 모바일 */
+@media (max-width: 760px) {
+  #branding>.container>.section-head {
+    padding-bottom: 28px;
+  }
+
+  #branding .team-section-head {
+    padding-top: 44px;
+    padding-bottom: 28px;
+  }
+}
+
+/* =========================================
+   CONTACT & FOOTER
+========================================= */
+/* Contact 메인 제목 */
+.site-footer .footer-cta h2 {
+  max-width: 960px;
+  line-height: 1.22;
+  letter-spacing: -0.045em;
+}
+
+/* Contact 설명 */
+.site-footer .footer-cta p {
+  line-height: 1.8;
+}
+
+/* 이메일 링크 */
+.site-footer .footer-mail {
+  border-bottom: 1px solid;
+
+  transition:
+    color 280ms ease,
+    border-color 280ms ease,
+    transform 280ms ease;
+}
+
+.site-footer .footer-mail:hover,
+.site-footer .footer-mail:focus-visible {
+  transform: translateY(-3px);
+}
+
+/* 모바일 제목 줄바꿈 */
+@media (max-width: 760px) {
+  .site-footer .footer-cta h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    line-height: 1.3;
+  }
+
+  .site-footer .footer-cta p br {
+    display: none;
+  }
+}
+
+/* =========================================
+   CONTACT / FOOTER
+   Winter Night · Moonlight
+========================================= */
+
+.site-footer {
+  color: rgba(226, 237, 248, 0.74);
+
+  background:
+    /* 달빛 */
+    radial-gradient(circle at 82% 4%,
+      rgba(210, 229, 255, 0.22) 0%,
+      rgba(135, 177, 225, 0.11) 17%,
+      transparent 38%),
+
+    /* 바다 위 반사광 */
+    radial-gradient(ellipse at 62% 92%,
+      rgba(112, 168, 225, 0.15) 0%,
+      transparent 42%),
+
+    /* 왼쪽 깊은 밤 */
+    radial-gradient(ellipse at 2% 55%,
+      rgba(18, 44, 77, 0.55) 0%,
+      transparent 52%),
+
+    linear-gradient(135deg,
+      #142943 0%,
+      #1b3655 42%,
+      #234768 70%,
+      #172b45 100%);
+}
+
+
+/* 아주 은은한 밤빛 */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 88% 16%,
+      rgba(255, 255, 255, 0.18) 0 1px,
+      transparent 2px),
+    radial-gradient(circle at 74% 9%,
+      rgba(205, 225, 248, 0.12) 0 1px,
+      transparent 2px),
+    radial-gradient(circle at 92% 34%,
+      rgba(205, 225, 248, 0.10) 0 1px,
+      transparent 2px);
+
+  opacity: 0.8;
+}
+
+
+/* 실제 콘텐츠는 위로 */
+.site-footer .footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* 작은 영문 */
+.site-footer .footer-eyebrow {
+  color: #82b8d8;
+}
+
+
+/* 메인 제목 */
+.site-footer .footer-cta h2 {
+  color: #f5f9ff;
+}
+
+
+/* 설명 */
+.site-footer .footer-cta p {
+  color: rgba(218, 230, 242, 0.72);
+}
+
+
+/* 구분선 */
+.site-footer .footer-cta,
+.site-footer .footer-bottom {
+  border-color: rgba(188, 214, 239, 0.18);
+}
+
+
+/* 이메일 */
+.site-footer .footer-mail {
+  color: #f0f6ff;
+  border-color: rgba(170, 204, 235, 0.48);
+}
+
+.site-footer .footer-mail:hover,
+.site-footer .footer-mail:focus-visible {
+  color: #a8d1ed;
+  border-color: #a8d1ed;
+
+  text-shadow:
+    0 0 18px rgba(157, 205, 237, 0.28);
+}
+
+
+/* 정보 제목 */
+.site-footer .footer-column strong {
+  color: #f2f7ff;
+}
+
+
+/* 일반 텍스트 */
+.site-footer .footer-column {
+  color: rgba(214, 227, 240, 0.70);
+}
+
+
+/* 링크 */
+.site-footer .footer-column a:hover,
+.site-footer .footer-column a:focus-visible {
+  color: #a8d1ed;
+}
+
+
+/* Footer 하단 */
+.site-footer .footer-bottom {
+  color: rgba(205, 219, 233, 0.65);
+}
+
+.site-footer .footer-bottom a {
+  color: #eaf3fc;
+}
+
+.site-footer .footer-bottom a:hover,
+.site-footer .footer-bottom a:focus-visible {
+  color: #a8d1ed;
+}
+
+
+/* 기존 초록 점도 밤바다 블루로 */
+.site-footer .footer-available i {
+  background: #82b8d8;
+  box-shadow:
+    0 0 12px rgba(130, 184, 216, 0.7);
+}
+
+/* SELECT BUSAN 릴스 - 프로그램 아이콘 흰색 */
+.team-reel-caption .thumb-tools img {
+  filter: brightness(0) invert(1);
 }
