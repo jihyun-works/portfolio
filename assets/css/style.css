@@ -3319,11 +3319,6 @@ template {
   color: #347e78;
 }
 
-.site-header .nav-links a:hover::after,
-.site-header .nav-links a:focus-visible::after {
-  transform: scaleX(1);
-}
-
 /* 스크롤 후 메뉴 색상 */
 .site-header.scrolled .nav-links {
   color: #52636e;
